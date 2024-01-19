@@ -7,8 +7,8 @@ services:
     ports:
       - "5433:5432"
     environment:
-      - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
     volumes:
       - pg_data:/var/lib/postgresql/data
@@ -22,9 +22,9 @@ services:
       KC_DB: postgres
       KC_DB_URL_HOST: db
       KC_DB_SCHEMA: public
-      KC_DB_URL_DATABASE: ${DB_NAME}
-      KC_DB_USERNAME: ${DB_USER}
-      KC_DB_PASSWORD: ${DB_PASS}
+      KC_DB_URL_DATABASE: ${POSTGRES_DB}
+      KC_DB_USERNAME: ${POSTGRES_USER}
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
     volumes:
