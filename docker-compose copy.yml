@@ -45,5 +45,4 @@ volumes:
 
 networks:
   keycloak_network:
-    # driver: host
     driver: bridge
